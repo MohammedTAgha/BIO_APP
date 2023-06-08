@@ -31,10 +31,22 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
+
                 radius: 40,
               //   image here
               ),
-              Text("Mohmmed agha : mbole develloper " , /*style: ,*/),
+              SizedBox(height: 20,),
+              Text("Mohmmed agha : mbole develloper " ,),
+              SizedBox(height: 4,),
+              Text("TECH BOX : FLUTTER COURSE "),
+              Divider(
+                height: 40,
+                thickness: 2,
+                color: Colors.grey,
+                indent: 30,
+                endIndent: 30,
+              ),
+              // CustopCard
 
             ],
 
