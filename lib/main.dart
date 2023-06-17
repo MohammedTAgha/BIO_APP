@@ -48,38 +48,48 @@ class MyApp extends StatelessWidget {
                 endIndent: 30,
               ),
               // CustopCard
-            Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
-              color: Colors.blue,
-              margin: const EdgeInsets.symmetric(horizontal: 20),
-              elevation: 5,
-              child:Padding(
-                padding:  EdgeInsets.all(6.0),
-                child: Row(
-                  children: [
-                    const Icon(Icons.phone_android_outlined),
-                    const SizedBox(width:20 ,),
-                    Column(
-                        children: [
-                          Text("Mohmmed agha : mbole develloper " ),
-                          Text("Mohmmed agha : mbole develloper " ),
-                        ],
-                    ),
-                    Spacer(),
-                    const Icon(Icons.phone_android_outlined),
-                    // Text("Mohmmed agha : mbole develloper " )
-                  ],
-                ) ,
+            MyCard(),
 
-
-              ),
-
-            )
             ],
 
           ),
         )
       ) ,
+    );
+  }
+}
+
+class MyCard extends StatelessWidget {
+  const MyCard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+      color: Colors.blue,
+      margin: EdgeInsets.symmetric(horizontal: 20),
+      elevation: 5,
+      child:Padding(
+        padding:  EdgeInsets.all(6.0),
+        child: Row(
+          children: [
+            Icon(Icons.phone_android_outlined),
+            SizedBox(width:20 ,),
+            Column(
+                children: [
+                  Text("Mohmmed agha : mbole develloper " ),
+                  Text("Mohmmed agha : mbole develloper " ),
+                ],
+            ),
+            Spacer(),
+            Icon(Icons.phone_android_outlined),
+            // Text("Mohmmed agha : mbole develloper " )
+          ],
+        ) ,
+      ),
+
     );
   }
 }
