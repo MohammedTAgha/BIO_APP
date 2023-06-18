@@ -48,8 +48,7 @@ class MyApp extends StatelessWidget {
                 endIndent: 30,
               ),
               // CustopCard
-            MyCard(),
-
+              MyCard(leadIcon: Icons.phone_android_outlined, title: "titddle", subTitle: "subTitle", sideIcon: Icons.phone_android_outlined)
             ],
 
           ),
@@ -61,32 +60,42 @@ class MyApp extends StatelessWidget {
 
 class MyCard extends StatelessWidget {
   const MyCard({
-    super.key,
+    super.key, required this.leadIcon, required this.title, required this.subTitle, required this.sideIcon,
+
   });
+
+  final IconData leadIcon;
+  final String title  ;
+  final String subTitle;
+  final IconData sideIcon;
 
   @override
   Widget build(BuildContext context) {
-    return const Card(
+    return  Card(
+
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+
       color: Colors.blue,
       margin: EdgeInsets.symmetric(horizontal: 20),
       elevation: 5,
       child:Padding(
         padding:  EdgeInsets.all(6.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Icon(Icons.phone_android_outlined),
             SizedBox(width:20 ,),
             Column(
                 children: [
-                  Text("Mohmmed agha : mbole develloper " ),
-                  Text("Mohmmed agha : mbole develloper " ),
+                  Text(this.title),
+                  Text(subTitle),
                 ],
             ),
             Spacer(),
             Icon(Icons.phone_android_outlined),
             // Text("Mohmmed agha : mbole develloper " )
           ],
+
         ) ,
       ),
 
