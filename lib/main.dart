@@ -58,7 +58,13 @@ class MyApp extends StatelessWidget {
             ),
             body: Container(
               alignment: Alignment.center,
-
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xFFDDEEBF), Color(0xFFABCDFF)],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
               child:
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +79,7 @@ class MyApp extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    "Mohmmed agha : mbole develloper ",
+                    "Mohammed Agha : Mobile develloper ",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
@@ -95,7 +101,7 @@ class MyApp extends StatelessWidget {
                     leadIcon: Icons.phone_android_outlined,
                     title: "Mobile ",
                     subTitle: "0597205585",
-                    sideIcon: Icons.phone_android_outlined,
+                    sideIcon: Icons.phone_forwarded,
                     yMargin: 12.0,
                     onClick: () {
                       _showMessage(context, text: "0597205585");
@@ -112,13 +118,13 @@ class MyApp extends StatelessWidget {
                     },
                   ),
                   MyCard(
-                    leadIcon: Icons.phone_android_outlined,
-                    title: "titddle",
-                    subTitle: "subTitle",
-                    sideIcon: Icons.phone_android_outlined,
+                    leadIcon: Icons.location_on,
+                    title: "Locatio",
+                    subTitle: "GAZA",
+                    sideIcon: Icons.map_outlined,
                     yMargin: 12.0,
                     onClick: () {
-                      _showMessage(context, text: "Text for MyCard");
+                      _showMessage(context, text: "show the map");
                     },
                   ),
                   Spacer(),
