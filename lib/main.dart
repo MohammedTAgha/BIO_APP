@@ -1,4 +1,7 @@
+import 'package:bioapp/widgets/MyCard.dart';
 import 'package:flutter/material.dart';
+
+
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +13,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -19,89 +21,62 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          title: const Text('BIO APP' , style: TextStyle(color: Colors.black , fontWeight: FontWeight.bold)),
-          elevation: 0,
-          centerTitle: true ,
-        ),
-        body: Container(
-
-          alignment: Alignment.center,
-          child: const Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CircleAvatar(
-
-                radius: 40,
-              //   image here
-              ),
-              SizedBox(height: 20,),
-              Text("Mohmmed agha : mbole develloper " ,),
-              SizedBox(height: 4,),
-              Text("TECH BOX : FLUTTER COURSE "),
-              Divider(
-                height: 40,
-                thickness: 2,
-                color: Colors.grey,
-                indent: 30,
-                endIndent: 30,
-              ),
-              // CustopCard
-              MyCard(leadIcon: Icons.phone_android_outlined, title: "titddle", subTitle: "subTitle", sideIcon: Icons.phone_android_outlined)
-            ],
-
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            title: const Text('BIO APP',
+                style: TextStyle(
+                    color: Colors.black, fontWeight: FontWeight.bold)),
+            elevation: 0,
+            centerTitle: true,
           ),
-        )
-      ) ,
-    );
-  }
-}
+          body: Container(
+            alignment: Alignment.center,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 40,
+                  //   image here
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Mohmmed agha : mbole develloper ",
+                  style: TextStyle (
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16
 
-class MyCard extends StatelessWidget {
-  const MyCard({
-    super.key, required this.leadIcon, required this.title, required this.subTitle, required this.sideIcon,
-
-  });
-
-  final IconData leadIcon;
-  final String title  ;
-  final String subTitle;
-  final IconData sideIcon;
-
-  @override
-  Widget build(BuildContext context) {
-    return  Card(
-
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
-
-      color: Colors.blue,
-      margin: EdgeInsets.symmetric(horizontal: 20),
-      elevation: 5,
-      child:Padding(
-        padding:  EdgeInsets.all(6.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Icon(Icons.phone_android_outlined),
-            SizedBox(width:20 ,),
-            Column(
-                children: [
-                  Text(this.title),
-                  Text(subTitle),
-                ],
+                  ),
+                ),
+                SizedBox(
+                  height: 4,
+                ),
+                Text("TECH BOX : FLUTTER COURSE "),
+                Divider(
+                  height: 40,
+                  thickness: 2,
+                  color: Colors.grey,
+                  indent: 30,
+                  endIndent: 30,
+                ),
+                // CustopCard
+                MyCard(
+                  leadIcon: Icons.phone_android_outlined,
+                  title: "titddle",
+                  subTitle: "subTitle",
+                  sideIcon: Icons.phone_android_outlined,
+                  onClick: () {
+                    print("test");
+                  },
+                )
+              ],
             ),
-            Spacer(),
-            Icon(Icons.phone_android_outlined),
-            // Text("Mohmmed agha : mbole develloper " )
-          ],
-
-        ) ,
-      ),
-
+          )),
     );
   }
 }
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
