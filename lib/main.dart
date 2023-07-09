@@ -14,20 +14,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     void _showMessage(BuildContext context, {required String text}) {
       final snackBar = SnackBar(
-        content: Container(
-          padding: EdgeInsets.all(12.0),
-          decoration: BoxDecoration(
-            color: Colors.lightGreen,
-            borderRadius: BorderRadius.circular(8.0),
-          ),
-          child: Text(
+        backgroundColor: Colors.green,
+        duration: Duration(milliseconds: 3300),
+        content:  Text(
             text,
             style: TextStyle(
               color: Colors.white,
               fontSize: 16.0,
             ),
           ),
-        ),
+
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
